@@ -476,7 +476,8 @@ public partial class SettingsProfile
             },
         };
 
-        AbsoluteInput = new(false)
+        // Touch screens have no relative mouse, so default to absolute there
+        AbsoluteInput = new(OS.HasFeature("mobile"))
         {
             Id = "AbsoluteInput",
             Title = "Absolute Input",
@@ -816,11 +817,12 @@ public partial class SettingsProfile
             Section = SettingsSection.Visual,
         };
 
-        CursorScale = new(1)
+        // Bigger by default on mobile, where it also scales the hitbox
+        CursorScale = new(OS.HasFeature("mobile") ? 1.5 : 1)
         {
             Id = "CursorScale",
             Title = "Cursor Scale",
-            Description = "Adjusts the cursor scale, does not change hitboxes",
+            Description = OS.HasFeature("mobile") ? "Adjusts the cursor scale and hitbox" : "Adjusts the cursor scale, does not change hitboxes",
             Section = SettingsSection.Visual,
             Slider = new()
             {

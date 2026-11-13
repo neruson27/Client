@@ -4,6 +4,8 @@ using Godot;
 
 public partial class Note(int index, int millisecond, float x, float y) : IHitObject, IAnimatableObject<NoteAnimation>, IComparable<Note>
 {
+    private static readonly bool scale_hitbox_with_cursor = OS.HasFeature("mobile");
+
     public int Id => (int)ObjectType.Note;
     public int Index { get; set; } = index;
     public int Millisecond { get; set; } = millisecond;
@@ -82,11 +84,14 @@ public partial class Note(int index, int millisecond, float x, float y) : IHitOb
 
     public HitResult CheckHitResult(Attempt attempt)
     {
+        // Fingers are less precise than a mouse, so on mobile the hitbox grows with the cursor
+        double hitBoxSize = scale_hitbox_with_cursor ? Constants.HIT_BOX_SIZE * attempt.Settings.CursorScale : Constants.HIT_BOX_SIZE;
+
         if (
-            attempt.CursorPosition.X + Constants.HIT_BOX_SIZE >= X - 0.5f
-            && attempt.CursorPosition.X - Constants.HIT_BOX_SIZE <= X + 0.5f
-            && attempt.CursorPosition.Y + Constants.HIT_BOX_SIZE >= Y - 0.5f
-            && attempt.CursorPosition.Y - Constants.HIT_BOX_SIZE <= Y + 0.5f
+            attempt.CursorPosition.X + hitBoxSize >= X - 0.5f
+            && attempt.CursorPosition.X - hitBoxSize <= X + 0.5f
+            && attempt.CursorPosition.Y + hitBoxSize >= Y - 0.5f
+            && attempt.CursorPosition.Y - hitBoxSize <= Y + 0.5f
         )
         {
             return HitResult.Hit;

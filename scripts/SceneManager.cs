@@ -35,6 +35,15 @@ public partial class SceneManager : Node
         backgroundContainer = GetNode<SubViewportContainer>("Background");
         backgroundViewport = backgroundContainer.GetNode<SubViewport>("SubViewport");
 
+        SafeArea.Apply(this);
+
+        // Cutout side changes when the device flips between landscape orientations
+        Root.SizeChanged += () =>
+        {
+            SafeArea.Apply(this);
+            SafeArea.Apply(Scene);
+        };
+
         if (!Rhythia.TempMode)
         {
             Load("res://scenes/loading.tscn");
@@ -96,6 +105,7 @@ public partial class SceneManager : Node
         }
 
         Instance.AddChild(scene);
+        SafeArea.Apply(scene);
         scene.Load();
     }
 

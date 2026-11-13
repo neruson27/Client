@@ -52,6 +52,10 @@ file_logging/enable_file_logging=true
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/viewport_height.mobile=864
+window/stretch/mode.mobile="canvas_items"
+window/stretch/aspect.mobile="expand"
+window/handheld/orientation=4
 
 [dotnet]
 
@@ -74,6 +78,7 @@ timers/tooltip_delay_sec=0.1
 [input_devices]
 
 pointing/android/enable_long_press_as_right_click=true
+buffering/agile_event_flushing.mobile=true
 
 [internationalization]
 
@@ -85,6 +90,7 @@ common/physics_ticks_per_second=120
 
 [rendering]
 
+rendering_device/vsync/swapchain_image_count.mobile=2
 textures/vram_compression/import_etc2_astc=true
 textures/lossless_compression/force_png=true
 environment/defaults/default_clear_color=Color(0.0885599, 0.08855992, 0.08855987, 1)

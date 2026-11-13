@@ -7,6 +7,12 @@ public class Discord
 
     static Discord()
     {
+        // No Discord client to talk to on mobile, Client stays null
+        if (Godot.OS.HasFeature("mobile"))
+        {
+            return;
+        }
+
         // TODO: Add logging here
         Client = new DiscordRpcClient(appId) { };
 

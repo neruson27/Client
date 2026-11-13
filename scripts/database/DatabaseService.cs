@@ -2,7 +2,6 @@
 using System.IO;
 using Godot;
 using SQLite;
-using SQLitePCL;
 
 public partial class DatabaseService : Node
 {
@@ -12,7 +11,6 @@ public partial class DatabaseService : Node
 
     public override void _Ready()
     {
-        Batteries.Init();
         Connection = new SQLiteConnection(DATABASE_PATH);
     }
 

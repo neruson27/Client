@@ -34,6 +34,12 @@ public partial class Rhythia : Node
 
         GetTree().AutoAcceptQuit = false;
 
+        // Touch drags otherwise get merged into one event per frame, which feels laggy
+        if (OS.HasFeature("mobile"))
+        {
+            Input.UseAccumulatedInput = false;
+        }
+
         // Settings
 
         if (!File.Exists($"{Constants.USER_FOLDER}/profiles/default.json"))
@@ -232,7 +238,7 @@ public partial class Rhythia : Node
             Stats.Save();
         }
 
-        Discord.Client.Dispose();
+        Discord.Client?.Dispose();
 
         var quitTween = Instance.CreateTween();
         quitTween

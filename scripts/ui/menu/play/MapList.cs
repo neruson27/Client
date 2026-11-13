@@ -633,7 +633,10 @@ public partial class MapList : Panel, ISkinnable
 
     private void shuffle()
     {
-        Maps = [.. Maps.Shuffle()];
+        // Random.Shuffle instead of LINQ Shuffle, which is .NET 10 only and Android builds target .NET 9
+        Map[] shuffled = [.. Maps];
+        Random.Shared.Shuffle(shuffled);
+        Maps = [.. shuffled];
 
         clear();
     }

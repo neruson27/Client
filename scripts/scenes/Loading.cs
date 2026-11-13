@@ -36,13 +36,18 @@ public partial class Loading : BaseScene
         progressBar.Modulate = transparent;
 
         bool updateFound = false;
-        try
+
+        // The updater installs desktop zips, there are no mobile release assets
+        if (!OS.HasFeature("mobile"))
         {
-            updateFound = await Releases.CheckForUpdatesAsync();
-        }
-        catch (Exception ex)
-        {
-            Logger.Log($"Could not get latest release: {ex.Message}");
+            try
+            {
+                updateFound = await Releases.CheckForUpdatesAsync();
+            }
+            catch (Exception ex)
+            {
+                Logger.Log($"Could not get latest release: {ex.Message}");
+            }
         }
 
         if (updateFound)

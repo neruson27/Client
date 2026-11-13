@@ -53,7 +53,8 @@ public partial class Game : BaseScene
             {
                 // Take mouse position difference between center of the current window size
                 // This is to make the mouse position the same as relative if it was locked, or confined
-                Vector2 absolutePosition = absolute - (GetViewport().GetWindow().Size / 2);
+                // Visible rect instead of window size so UI content scaling (mobile) doesn't offset the center
+                Vector2 absolutePosition = absolute - (GetViewport().GetVisibleRect().Size / 2);
 
                 // Multiply by 0.582f to make it 1:1 to absolute scale on nightly
                 CursorManager.UpdateCursor(absolutePosition * 0.582f);

@@ -42,6 +42,10 @@ public partial class PlayerInputController : Node
             case InputEventMouseButton { ButtonIndex: MouseButton.Left }:
                 handleMouseInput(@event);
                 break;
+            // Emulated mouse only sends a click on tap, move there too so the cursor jumps to the finger
+            case InputEventScreenTouch { Pressed: true } touch:
+                OnMouseMove?.Invoke(Vector2.Zero, touch.Position);
+                break;
             case InputEventKey { PhysicalKeycode: Key.Escape }:
             case InputEventKey { PhysicalKeycode: Key.F2 }:
             case InputEventKey { PhysicalKeycode: Key.F3 }:
