@@ -5,7 +5,7 @@
 <h3 align="center">Rhythia para Android: el juego de ritmo de la cuadrícula 3×3, ahora con controles táctiles.</h3>
 
 <p align="center">
-  <a href="https://github.com/neruson27/Client/releases/latest"><img src="https://img.shields.io/github/v/release/neruson27/Client?include_prereleases&label=APK&logo=android&logoColor=white&color=3DDC84" alt="Última versión"></a>
+  <a href="https://github.com/neruson27/Client/releases"><img src="https://img.shields.io/github/v/release/neruson27/Client?include_prereleases&label=APK&logo=android&logoColor=white&color=3DDC84" alt="Última versión"></a>
   <a href="https://godotengine.org/download"><img src="https://img.shields.io/badge/Godot-4.7.2%20.NET-%23478CBF?logo=godot-engine&logoColor=white" alt="Godot 4.7.2"></a>
 </p>
 
@@ -34,7 +34,7 @@
 
 ## Instalación
 
-1. Descarga **[Rhythia.apk](https://github.com/neruson27/Client/releases/latest/download/Rhythia.apk)** desde el teléfono (también en la página de [releases](https://github.com/neruson27/Client/releases)).
+1. Descarga **[Rhythia.apk](https://github.com/neruson27/Client/releases/download/v0.2.0-android/Rhythia.apk)** desde el teléfono (también en la página de [releases](https://github.com/neruson27/Client/releases)).
 2. Ábrelo y, si Android lo pide, permite **instalar apps de fuentes desconocidas** para tu navegador o gestor de archivos.
 3. Abre **Rhythia** desde el cajón de aplicaciones.
 
