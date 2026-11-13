@@ -2,111 +2,115 @@
   <img src="https://github.com/Rhythia/Client/blob/master/textures/RhythiaSquircle.png?raw=true" alt="Rhythia" width="400"/>
 </p>
 
-<h3 align="center">Rhythia para Android: el juego de ritmo de la cuadrícula 3×3, ahora con controles táctiles.</h3>
+<p align="center">
+  <b>English</b> · <a href="README.es.md">Español</a>
+</p>
+
+<h3 align="center">Rhythia for Android: the 3×3 grid rhythm game, now with touch controls.</h3>
 
 <p align="center">
-  <a href="https://github.com/neruson27/Client/releases"><img src="https://img.shields.io/github/v/release/neruson27/Client?include_prereleases&label=APK&logo=android&logoColor=white&color=3DDC84" alt="Última versión"></a>
+  <a href="https://github.com/neruson27/Client/releases"><img src="https://img.shields.io/github/v/release/neruson27/Client?include_prereleases&label=APK&logo=android&logoColor=white&color=3DDC84" alt="Latest release"></a>
   <a href="https://godotengine.org/download"><img src="https://img.shields.io/badge/Godot-4.7.2%20.NET-%23478CBF?logo=godot-engine&logoColor=white" alt="Godot 4.7.2"></a>
 </p>
 
 ---
 
 > [!IMPORTANT]
-> **Este es un port no oficial para móvil** de [Rhythia/Client](https://github.com/Rhythia/Client). No lo mantiene el equipo de Rhythia: los problemas de esta versión se reportan en los [issues de este fork](https://github.com/neruson27/Client/issues), no en el Discord de Rhythia.
+> **This is an unofficial mobile port** of [Rhythia/Client](https://github.com/Rhythia/Client). It is not maintained by the Rhythia team: report issues with this version in [this fork's issues](https://github.com/neruson27/Client/issues), not on the Rhythia Discord.
 
 > [!CAUTION]
-> Rhythia **no** está afiliado con CAPO Games, Steam Rhythia ni rhythia.com.
+> Rhythia is **not** affiliated with CAPO Games, Steam Rhythia, or rhythia.com.
 
 ---
 
-## Contenido
+## Table of Contents
 
-- [Instalación](#instalación)
-- [Cómo jugar en el teléfono](#cómo-jugar-en-el-teléfono)
-- [Conseguir mapas](#conseguir-mapas)
-- [Diferencias con la versión de PC](#diferencias-con-la-versión-de-pc)
-- [Problemas conocidos](#problemas-conocidos)
-- [Compilar el APK](#compilar-el-apk)
-- [Mantener el fork al día](#mantener-el-fork-al-día)
-- [Licencia](#licencia)
+- [Installation](#installation)
+- [Playing on your phone](#playing-on-your-phone)
+- [Getting maps](#getting-maps)
+- [Differences from the PC version](#differences-from-the-pc-version)
+- [Known issues](#known-issues)
+- [Building the APK](#building-the-apk)
+- [Keeping the fork up to date](#keeping-the-fork-up-to-date)
+- [License](#license)
 
 ---
 
-## Instalación
+## Installation
 
-1. Descarga **[Rhythia.apk](https://github.com/neruson27/Client/releases/download/v0.2.0-android/Rhythia.apk)** desde el teléfono (también en la página de [releases](https://github.com/neruson27/Client/releases)).
-2. Ábrelo y, si Android lo pide, permite **instalar apps de fuentes desconocidas** para tu navegador o gestor de archivos.
-3. Abre **Rhythia** desde el cajón de aplicaciones.
+1. Download **[Rhythia.apk](https://github.com/neruson27/Client/releases/download/v0.2.0-android/Rhythia.apk)** on your phone (also on the [releases](https://github.com/neruson27/Client/releases) page).
+2. Open it and, if Android asks, allow your browser or file manager to **install unknown apps**.
+3. Open **Rhythia** from your app drawer.
 
-**Requisitos:** Android con CPU de 64 bits ARM (`arm64-v8a`, prácticamente cualquier teléfono de los últimos años) y soporte de Vulkan.
+**Requirements:** Android with a 64-bit ARM CPU (`arm64-v8a`, practically any phone from the last few years) and Vulkan support.
 
 > [!NOTE]
-> Por ahora el APK está firmado con una clave de depuración. Si en el futuro se publica con otra firma, habrá que desinstalar la versión anterior antes de instalar la nueva, y eso borra mapas y ajustes.
+> The APK is currently signed with a debug key. If a future version ships with a different signature, you will have to uninstall the old one first, which deletes your maps and settings.
 
 ---
 
-## Cómo jugar en el teléfono
+## Playing on your phone
 
-- El juego se juega en **horizontal** (gira solo según cómo sostengas el teléfono).
-- El cursor usa **entrada absoluta**: sigue a tu dedo y **salta a donde toques**, no hace falta arrastrar desde el centro.
-- En móvil el **hitbox crece con el tamaño del cursor** para compensar que un dedo es menos preciso que un ratón.
+- The game plays in **landscape** (it rotates with how you hold the phone).
+- The cursor uses **absolute input**: it follows your finger and **jumps to wherever you tap**, no need to drag from the center.
+- On mobile the **hitbox grows with the cursor size** to make up for a finger being less precise than a mouse.
 
-Ajustes útiles:
+Useful settings:
 
-| Ajuste | Dónde | Para qué |
+| Setting | Where | What for |
 |---|---|---|
-| **Cursor Scale** | Settings → Visual | Tamaño del cursor **y** del hitbox. 1.5 por defecto; súbelo si fallas notas por poco. |
-| **Absolute Sensitivity** | Settings → Gameplay | Cuánto se mueve el cursor respecto al dedo. Si el cursor se queda atrás del dedo, prueba ~1.25. |
-| **Absolute Input** | Settings → Gameplay | Activado por defecto en móvil; déjalo así para jugar con el dedo. |
+| **Cursor Scale** | Settings → Visual | Size of the cursor **and** the hitbox. 1.5 by default; raise it if you keep barely missing notes. |
+| **Absolute Sensitivity** | Settings → Gameplay | How far the cursor moves relative to your finger. If the cursor lags behind your finger, try ~1.25. |
+| **Absolute Input** | Settings → Gameplay | On by default on mobile; leave it on to play with your finger. |
 
 ---
 
-## Conseguir mapas
+## Getting maps
 
-El juego no trae mapas. Se consiguen en el [Discord de Rhythia](https://discord.gg/rhythia).
+The game ships without maps. You can find them on the [Rhythia Discord](https://discord.gg/rhythia).
 
-1. Descarga el mapa (`.sspm`, `.phxm`, ...) en el teléfono.
-2. En el juego ve a **Play → Import** y elígelo con el selector de archivos de Android.
+1. Download the map (`.sspm`, `.phxm`, ...) on your phone.
+2. In the game go to **Play → Import** and pick it with the Android file picker.
 
-Los datos del juego (mapas, ajustes, repeticiones) se guardan en el almacenamiento privado de la app, así que se borran si la desinstalas.
-
----
-
-## Diferencias con la versión de PC
-
-Todo lo específico de móvil se activa solo en Android (`OS.HasFeature("mobile")`); el mismo código sigue funcionando igual en PC.
-
-- **Interfaz:** escala adaptativa (`canvas_items`, alto base 864) para que el texto sea legible sin que se corten los paneles, y respeta el recorte de la cámara frontal (`scripts/util/SafeArea.cs`).
-- **Entrada táctil:** el cursor salta al punto tocado y se reduce la latencia (sin acumulación de input, `agile_event_flushing` y 2 imágenes de swapchain).
-- **Hitbox:** `0.07 × Cursor Scale` en móvil, por eso **las puntuaciones de móvil no son comparables con las de PC**.
-- **Importar mapas:** las URIs `content://` del selector de Android se copian a la caché antes de importarlas.
-- **Sin** Discord Rich Presence ni actualizador automático.
-- **.NET 9 en Android:** la plantilla de exportación de Godot 4.7.2 solo soporta `net9.0`; PC sigue en .NET 10.
-- **SQLite:** actualizado a `sqlite-net-pcl` 1.11.285, que incluye la librería nativa para Android.
+Game data (maps, settings, replays) lives in the app's private storage, so it is deleted if you uninstall the app.
 
 ---
 
-## Problemas conocidos
+## Differences from the PC version
 
-- El soporte de C# en Android sigue siendo **experimental** en Godot.
-- El botón **Restart** de los ajustes solo cierra el juego; hay que volver a abrirlo a mano.
-- Botones y textos pensados para ratón pueden quedar algo pequeños en pantallas muy chicas.
+Everything mobile-specific only kicks in on Android (`OS.HasFeature("mobile")`); the same code keeps working unchanged on PC.
+
+- **UI:** adaptive scaling (`canvas_items`, 864 base height) so text is readable without panels getting cut off, and it stays clear of the front camera cutout (`scripts/util/SafeArea.cs`).
+- **Touch input:** the cursor jumps to the tapped point and latency is reduced (no input accumulation, `agile_event_flushing` and 2 swapchain images).
+- **Hitbox:** `0.07 × Cursor Scale` on mobile, so **mobile scores are not comparable with PC scores**.
+- **Map import:** `content://` URIs from the Android picker are copied to the cache before importing.
+- **No** Discord Rich Presence or auto-updater.
+- **.NET 9 on Android:** the Godot 4.7.2 export template only supports `net9.0`; PC stays on .NET 10.
+- **SQLite:** upgraded to `sqlite-net-pcl` 1.11.285, which ships the native library for Android.
 
 ---
 
-## Compilar el APK
+## Known issues
 
-### Requisitos
+- C# on Android is still **experimental** in Godot.
+- The **Restart** button in settings only closes the game; you have to reopen it yourself.
+- Buttons and text designed for a mouse can still be a bit small on very small screens.
 
-| Herramienta | Versión |
+---
+
+## Building the APK
+
+### Requirements
+
+| Tool | Version |
 |---|---|
-| [Godot (.NET)](https://godotengine.org/download) | **4.7.2** + sus export templates |
+| [Godot (.NET)](https://godotengine.org/download) | **4.7.2** + its export templates |
 | [.NET SDK](https://dotnet.microsoft.com/download) | **10.0** |
-| JDK | 17 o superior |
-| Android SDK | platform-tools, build-tools y una plataforma reciente |
-| [Git LFS](https://git-lfs.github.com/) | Para texturas y audio |
+| JDK | 17 or newer |
+| Android SDK | platform-tools, build-tools and a recent platform |
+| [Git LFS](https://git-lfs.github.com/) | For textures and audio |
 
-### Pasos
+### Steps
 
 ```bash
 git clone https://github.com/neruson27/Client.git
@@ -115,13 +119,13 @@ git lfs pull
 dotnet tool restore
 ```
 
-En Godot:
+In Godot:
 
 1. **Editor → Manage Export Templates → Download and Install**.
-2. **Editor Settings → Export → Android**: rutas del Android SDK y del JDK (y el keystore de depuración, que Android Studio crea en `~/.android/debug.keystore`).
-3. **Project → Export → Android → Export Project**, o el botón de Android arriba a la derecha para instalar directo en un teléfono con depuración USB o inalámbrica.
+2. **Editor Settings → Export → Android**: paths to the Android SDK and the JDK (plus the debug keystore, which Android Studio creates at `~/.android/debug.keystore`).
+3. **Project → Export → Android → Export Project**, or the Android button in the top right to install straight to a phone with USB or wireless debugging.
 
-También desde la terminal:
+Or from the terminal:
 
 ```bash
 godot --headless --path . --export-debug "Android" Rhythia.apk
@@ -129,9 +133,9 @@ adb install -r Rhythia.apk
 ```
 
 > [!TIP]
-> Exportar modifica `packages.lock.json` (la configuración de Android usa otro runtime). Restáuralo con `dotnet restore --force-evaluate` antes de hacer commit.
+> Exporting modifies `packages.lock.json` (the Android configuration uses a different runtime). Restore it with `dotnet restore --force-evaluate` before committing.
 
-Antes de subir cambios, formatea el código como en el proyecto original:
+Before pushing changes, format the code like the upstream project does:
 
 ```bash
 dotnet format Rhythia.csproj
@@ -140,9 +144,9 @@ dotnet csharpier format .
 
 ---
 
-## Mantener el fork al día
+## Keeping the fork up to date
 
-La rama `master` de este fork es una copia del proyecto original; `main` tiene el port para Android. Para traer novedades de Rhythia:
+This fork's `master` branch is a copy of the upstream project; `main` holds the Android port. To pull in Rhythia updates:
 
 ```bash
 git remote add upstream https://github.com/Rhythia/Client.git
@@ -152,8 +156,8 @@ git merge upstream/master
 
 ---
 
-## Licencia
+## License
 
-Rhythia está bajo la [GNU Affero General Public License v3.0](LICENSE). Este fork mantiene la misma licencia; el código de esta versión modificada está disponible en este repositorio.
+Rhythia is licensed under the [GNU Affero General Public License v3.0](LICENSE). This fork keeps the same license; the source code for this modified version is available in this repository.
 
-Créditos del juego al equipo y colaboradores de [Rhythia](https://github.com/Rhythia/Client).
+Game credits go to the [Rhythia](https://github.com/Rhythia/Client) team and contributors.
