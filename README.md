@@ -2,293 +2,158 @@
   <img src="https://github.com/Rhythia/Client/blob/master/textures/RhythiaSquircle.png?raw=true" alt="Rhythia" width="400"/>
 </p>
 
-<h3 align="center">A free-to-play rhythm game where you move your mouse across a 3×3 grid.</h3>
+<h3 align="center">Rhythia para Android: el juego de ritmo de la cuadrícula 3×3, ahora con controles táctiles.</h3>
 
 <p align="center">
-  <a href="https://discord.gg/rhythia"><img src="https://img.shields.io/discord/1064060807320702996?label=Discord&logo=discord&logoColor=white&color=5865F2" alt="Discord"></a>
-  <a href="https://godotengine.org/download"><img src="https://img.shields.io/badge/Godot-4.7-%23478CBF?logo=godot-engine&logoColor=white" alt="Godot 4.7">
+  <a href="https://github.com/neruson27/Client/releases/latest"><img src="https://img.shields.io/github/v/release/neruson27/Client?include_prereleases&label=APK&logo=android&logoColor=white&color=3DDC84" alt="Última versión"></a>
+  <a href="https://godotengine.org/download"><img src="https://img.shields.io/badge/Godot-4.7.2%20.NET-%23478CBF?logo=godot-engine&logoColor=white" alt="Godot 4.7.2"></a>
 </p>
 
 ---
 
-> *"Rhyt-Rhythmia"*
-> — Edward "BTMC" Ling, 2024
+> [!IMPORTANT]
+> **Este es un port no oficial para móvil** de [Rhythia/Client](https://github.com/Rhythia/Client). No lo mantiene el equipo de Rhythia: los problemas de esta versión se reportan en los [issues de este fork](https://github.com/neruson27/Client/issues), no en el Discord de Rhythia.
 
 > [!CAUTION]
-> **Rhythia is NOT affiliated with CAPO Games, Steam Rhythia, or rhythia.com in any way.** We cannot provide support or assistance for any issues related to those platforms. Please ensure you are downloading the correct client from the links below. We do, however, support any modification of our logos and content in the client source under our [license](LICENSE).
+> Rhythia **no** está afiliado con CAPO Games, Steam Rhythia ni rhythia.com.
 
 ---
 
-## Table of Contents
+## Contenido
 
-- [About](#about)
-- [Downloading the Game](#downloading-the-game)
-  - [Rewrite (Current)](#rewrite-current-maintained-client)
-  - [Nightly (Legacy)](#nightly-legacy)
-- [Installation](#installation)
-  - [Windows](#windows)
-  - [Linux](#linux)
-  - [Linux Troubleshooting](#linux-troubleshooting)
-- [User Folder](#user-folder)
-- [Getting Maps](#getting-maps)
-- [Development](#development)
-  - [Prerequisites](#prerequisites)
-  - [Project Structure](#project-structure)
-- [Contributing](#contributing)
+- [Instalación](#instalación)
+- [Cómo jugar en el teléfono](#cómo-jugar-en-el-teléfono)
+- [Conseguir mapas](#conseguir-mapas)
+- [Diferencias con la versión de PC](#diferencias-con-la-versión-de-pc)
+- [Problemas conocidos](#problemas-conocidos)
+- [Compilar el APK](#compilar-el-apk)
+- [Mantener el fork al día](#mantener-el-fork-al-día)
+- [Licencia](#licencia)
 
 ---
 
-## About
+## Instalación
 
-**Rhythia** (formerly *Sound Space Plus*) is a free and open-source rhythm game built with **Godot 4.7** and **C#**.
+1. Descarga **[Rhythia.apk](https://github.com/neruson27/Client/releases/latest/download/Rhythia.apk)** desde el teléfono (también en la página de [releases](https://github.com/neruson27/Client/releases)).
+2. Ábrelo y, si Android lo pide, permite **instalar apps de fuentes desconocidas** para tu navegador o gestor de archivos.
+3. Abre **Rhythia** desde el cajón de aplicaciones.
 
----
-
-## Downloading the Game
-
-There are currently two builds of the game available.
-
-> [!IMPORTANT]
-> **Do not** clone this repository to play the game. Use the download links below instead.
-
-### Rewrite (Current Maintained Client)
-
-The current client being actively maintained, now in early testing.
+**Requisitos:** Android con CPU de 64 bits ARM (`arm64-v8a`, prácticamente cualquier teléfono de los últimos años) y soporte de Vulkan.
 
 > [!NOTE]
-> **Recommended** — This is the latest version of the client. Please report any bugs found in **#bug-reports** on our [Discord](https://discord.gg/rhythia) server.
-
-You can view all releases on the [Rewrite releases page](https://github.com/Rhythia/Client/releases).
-
-| Platform | Direct Download |
-|---|---|
-| **Windows** | [Download](https://github.com/Rhythia/Client/releases/latest/download/windows.zip) |
-| **Linux** | [Download](https://github.com/Rhythia/Client/releases/latest/download/linux.zip) |
-
-You can view the Rewrite source code [here](https://github.com/Rhythia/Client).
-
-### Nightly (Legacy)
-
-The legacy client we all know and (somewhat) love. We recommend this client if you're just starting out for now.
-
-> [!WARNING]
-> **Nightly is no longer being maintained.** All current development efforts are focused on the Rewrite client above.
-
-You can view all releases on the [Nightly releases page](https://github.com/David20122/sound-space-plus/releases).
-
-| Platform | Direct Download |
-|---|---|
-| **Windows** | [Download](https://github.com/David20122/sound-space-plus/releases/latest/download/windows.zip) |
-| **Linux** | [Download](https://github.com/David20122/sound-space-plus/releases/latest/download/linux.zip) |
-
-You can view Nightly's source code [here](https://github.com/David20122/sound-space-plus).
+> Por ahora el APK está firmado con una clave de depuración. Si en el futuro se publica con otra firma, habrá que desinstalar la versión anterior antes de instalar la nueva, y eso borra mapas y ajustes.
 
 ---
 
-## Installation
+## Cómo jugar en el teléfono
 
-### Windows
+- El juego se juega en **horizontal** (gira solo según cómo sostengas el teléfono).
+- El cursor usa **entrada absoluta**: sigue a tu dedo y **salta a donde toques**, no hace falta arrastrar desde el centro.
+- En móvil el **hitbox crece con el tamaño del cursor** para compensar que un dedo es menos preciso que un ratón.
 
-1. Download `windows.zip` for your chosen client above.
-2. Extract the `.zip` file to a folder of your choice.
-3. Run `Rhythia.exe`.
+Ajustes útiles:
 
-> [!WARNING]
-> You **must** have the [Visual C++ Redistributable](https://aka.ms/vs/17/release/vc_redist.x64.exe) installed to run the game on Windows!
-
-### Linux
-
-#### GUI File Manager
-
-> [!TIP]
-> The following packages are recommended: `thunar`, `thunar-archive-plugin`
-
-1. Download `linux.zip` for your chosen client above.
-2. Right-click the downloaded file and extract it.
-3. Run `Rhythia.x86_64`.
-
-#### Terminal
-
-> [!WARNING]
-> The `unzip` package is **required**. Install it using your distribution's package manager if you don't have it.
-
-1. Download `linux.zip` for your chosen client above.
-2. Open your terminal and run the following commands:
-   ```bash
-   # Assuming the file is in the Downloads folder
-   cd $HOME/Downloads
-   unzip -d Rhythia linux.zip
-   ```
-3. Move into the extracted folder and run the game:
-   ```bash
-   cd Rhythia
-   ./Rhythia.x86_64
-   ```
-
-### Linux Troubleshooting
-
-If your game doesn't run, make the binary executable from within your Rhythia folder:
-
-```bash
-sudo chmod +x Rhythia.x86_64
-```
-
-> [!NOTE]
-> You need to be a superuser in order to run `sudo`.
-
-Still having issues? Visit the **#support** channel in our [Discord](https://discord.gg/rhythia).
-
----
-
-## User Folder
-
-Your maps, replays, skins, and settings are stored separately from the game installation:
-
-| Platform | Path |
-|---|---|
-| **Windows** | `%appdata%\Rhythia` |
-| **Linux** | `~/.local/share/Rhythia` |
-
-You can also access the user folder from within the game via the **User Folder** button on the top bar.
-
-> [!NOTE]
-> You can change the user folder location to your desired path in **Settings** → **Other** → **Set User Folder Path**
-
----
-
-## Getting Maps
-
-Maps aren't included in the game by default; they must be downloaded and imported into the client. Maps can be found in the Discord server linked above.
-
----
-
-## Development
-
-### Prerequisites
-
-| Tool | Version | Notes |
+| Ajuste | Dónde | Para qué |
 |---|---|---|
-| [Godot Engine](https://godotengine.org/download) | **4.7** | .NET (C#) build required |
-| [.NET SDK](https://dotnet.microsoft.com/download) | **10.0** | |
-| [Git LFS](https://git-lfs.github.com/) | Latest | Required for large binary assets |
-
-### Project Structure
-
-```
-├── fonts/           # Font assets
-├── meshes/          # 3D mesh assets
-├── prefabs/         # Reusable scene prefabs (UI elements, etc.)
-├── scenes/          # Main game scenes (menu, game, results, etc.)
-├── scripts/         # C# source code
-│   ├── database/    # Database / persistence layer
-│   ├── game/        # Core gameplay (attempts, renderers, mods, judgments)
-│   ├── map/         # Map parsing and management
-│   ├── multiplayer/ # Multiplayer lobby and player logic
-│   ├── scenes/      # Scene-specific scripts
-│   ├── shaders/     # Shader code
-│   ├── skinning/    # Skin loading and management
-│   ├── spaces/      # Space-related logic
-│   ├── ui/          # UI components and notifications
-│   └── util/        # Utility / helper classes
-├── sounds/          # Audio assets
-├── textures/        # Texture and image assets
-├── themes/          # Godot UI themes
-└── user/            # Default user data scaffold
-```
+| **Cursor Scale** | Settings → Visual | Tamaño del cursor **y** del hitbox. 1.5 por defecto; súbelo si fallas notas por poco. |
+| **Absolute Sensitivity** | Settings → Gameplay | Cuánto se mueve el cursor respecto al dedo. Si el cursor se queda atrás del dedo, prueba ~1.25. |
+| **Absolute Input** | Settings → Gameplay | Activado por defecto en móvil; déjalo así para jugar con el dedo. |
 
 ---
 
-## Contributing
+## Conseguir mapas
 
-We ❤️ developers! Contributions are welcome — whether it's bug fixes, features, documentation, or translations.
+El juego no trae mapas. Se consiguen en el [Discord de Rhythia](https://discord.gg/rhythia).
 
-> [!WARNING]
-> **Nightly is no longer actively maintained.** This guide is for contributing to the **Rewrite** client. The contribution process is the same, but you'll be working with the [Rewrite repository](https://github.com/Rhythia/Client).
+1. Descarga el mapa (`.sspm`, `.phxm`, ...) en el teléfono.
+2. En el juego ve a **Play → Import** y elígelo con el selector de archivos de Android.
 
-### Required Software
+Los datos del juego (mapas, ajustes, repeticiones) se guardan en el almacenamiento privado de la app, así que se borran si la desinstalas.
 
-| Software | Notes |
+---
+
+## Diferencias con la versión de PC
+
+Todo lo específico de móvil se activa solo en Android (`OS.HasFeature("mobile")`); el mismo código sigue funcionando igual en PC.
+
+- **Interfaz:** escala adaptativa (`canvas_items`, alto base 864) para que el texto sea legible sin que se corten los paneles, y respeta el recorte de la cámara frontal (`scripts/util/SafeArea.cs`).
+- **Entrada táctil:** el cursor salta al punto tocado y se reduce la latencia (sin acumulación de input, `agile_event_flushing` y 2 imágenes de swapchain).
+- **Hitbox:** `0.07 × Cursor Scale` en móvil, por eso **las puntuaciones de móvil no son comparables con las de PC**.
+- **Importar mapas:** las URIs `content://` del selector de Android se copian a la caché antes de importarlas.
+- **Sin** Discord Rich Presence ni actualizador automático.
+- **.NET 9 en Android:** la plantilla de exportación de Godot 4.7.2 solo soporta `net9.0`; PC sigue en .NET 10.
+- **SQLite:** actualizado a `sqlite-net-pcl` 1.11.285, que incluye la librería nativa para Android.
+
+---
+
+## Problemas conocidos
+
+- El soporte de C# en Android sigue siendo **experimental** en Godot.
+- El botón **Restart** de los ajustes solo cierra el juego; hay que volver a abrirlo a mano.
+- Botones y textos pensados para ratón pueden quedar algo pequeños en pantallas muy chicas.
+
+---
+
+## Compilar el APK
+
+### Requisitos
+
+| Herramienta | Versión |
 |---|---|
-| [Godot 4.7 Stable (.NET)](https://godotengine.org/download) | The C# / .NET build is required |
-| [Git](https://git-scm.com/downloads) | Windows: Git for Windows · Linux: `git` package |
-| [GitHub Account](https://github.com/signup) | Needed to fork and open pull requests |
+| [Godot (.NET)](https://godotengine.org/download) | **4.7.2** + sus export templates |
+| [.NET SDK](https://dotnet.microsoft.com/download) | **10.0** |
+| JDK | 17 o superior |
+| Android SDK | platform-tools, build-tools y una plataforma reciente |
+| [Git LFS](https://git-lfs.github.com/) | Para texturas y audio |
 
-**Optional:** [Visual Studio Code](https://code.visualstudio.com/) with the [godot-tools](https://marketplace.visualstudio.com/items?itemName=geequlim.godot-tools) extension.
-
-### Setting Up Your Workspace
-
-#### 1. Fork the Repository
-
-1. Head to the [Rewrite repository](https://github.com/Rhythia/Client).
-2. Press the **Fork** button and create a fork under your account.
-
-#### 2. Clone Your Fork
-
-Open a terminal and clone your fork into a folder of your choice:
+### Pasos
 
 ```bash
-# Navigate to your preferred directory
-cd Documents/Rhythia
-
-# Clone your fork (replace YOUR_USERNAME with your GitHub username)
-git clone https://github.com/YOUR_USERNAME/Client.git
-
+git clone https://github.com/neruson27/Client.git
 cd Client
-
-# Fetch large files (textures, audio, etc.)
-git lfs fetch --all
 git lfs pull
-
-# Restore .NET tools
 dotnet tool restore
 ```
 
-#### 3. Open in Godot
+En Godot:
 
-1. Open **Godot 4.7 (.NET)**.
-2. Click **Import**.
-3. Browse to your cloned repository folder and select `project.godot`.
-4. Click **Open**.
+1. **Editor → Manage Export Templates → Download and Install**.
+2. **Editor Settings → Export → Android**: rutas del Android SDK y del JDK (y el keystore de depuración, que Android Studio crea en `~/.android/debug.keystore`).
+3. **Project → Export → Android → Export Project**, o el botón de Android arriba a la derecha para instalar directo en un teléfono con depuración USB o inalámbrica.
 
-### Submitting Your Changes
+También desde la terminal:
 
-1. **Format** the project:
-   ```bash
-   dotnet format Rhythia.csproj
-   dotnet csharpier format .
-   ```
+```bash
+godot --headless --path . --export-debug "Android" Rhythia.apk
+adb install -r Rhythia.apk
+```
 
-1. **Stage** any new files you created:
-   ```bash
-   git add ./path/to/your/new/files
-   ```
+> [!TIP]
+> Exportar modifica `packages.lock.json` (la configuración de Android usa otro runtime). Restáuralo con `dotnet restore --force-evaluate` antes de hacer commit.
 
-2. **Commit** and **push** your changes:
-   ```bash
-   git commit -m "Brief description of your change"
-   git push origin indev
-   ```
+Antes de subir cambios, formatea el código como en el proyecto original:
 
-3. Go to your forked repository on GitHub — you should see a message like *"This branch is 1 commit ahead of Rhythia/Client:indev"*.
-
-4. Click **Contribute → Open pull request**.
-
-5. Ensure your PR is targeting the **`indev`** branch of the main repository.
-
-6. Review your changes, add a clear title and description, then click **Create pull request**.
-
-7. Wait for maintainers to review your code and provide feedback.
-
-### Guidelines
-
-- Follow existing code style and naming conventions.
-- Keep PRs focused — one feature or fix per PR.
-- Test your changes locally before submitting.
-- For large changes, open an issue first to discuss the approach.
-- Always state AI usage in PRs and issues, you should be able to explain and fix any code you submit.
+```bash
+dotnet format Rhythia.csproj
+dotnet csharpier format .
+```
 
 ---
 
-## License
+## Mantener el fork al día
 
-Rhythia is licensed under the [GNU Affero General Public License v3.0](LICENSE).
+La rama `master` de este fork es una copia del proyecto original; `main` tiene el port para Android. Para traer novedades de Rhythia:
+
+```bash
+git remote add upstream https://github.com/Rhythia/Client.git
+git fetch upstream
+git merge upstream/master
+```
+
+---
+
+## Licencia
+
+Rhythia está bajo la [GNU Affero General Public License v3.0](LICENSE). Este fork mantiene la misma licencia; el código de esta versión modificada está disponible en este repositorio.
+
+Créditos del juego al equipo y colaboradores de [Rhythia](https://github.com/Rhythia/Client).
